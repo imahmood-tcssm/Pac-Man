@@ -1,6 +1,6 @@
 from processing import *
 import random
-
+# test change
 # [(3, 9), (3, 7)]
 
 board = [["w", "w", "w", "w", "w", "w", "w", "w", "w"],
