@@ -1,6 +1,6 @@
 from processing import *
 import random
-# test change
+
 # [(3, 9), (3, 7)]
 
 board = [["w", "w", "w", "w", "w", "w", "w", "w", "w"],
@@ -86,18 +86,12 @@ def setup():
   game["isSuper"] = False
   def updateGhostCoords(ghost):
     global ghosts
-    print ('ran')
     def getXCoord(ghost):
-      print ('getting X coords')
       return 78 * (ghosts[ghost].col) + 39
     def getYCoord(ghost):
-      print('get Y coords')
       return 28 * (ghosts[ghost].row) + 14
     ghosts[ghost].x = getXCoord(ghost)
     ghosts[ghost].y = getYCoord(ghost)
-    print("got coordinates")
-    print("row: ", ghosts[ghost].row, "col: ", ghosts[ghost].col)
-    print(ghost, ghosts[ghost].x, ghosts[ghost].y)
 
 def draw():
   global start, game_over
@@ -224,7 +218,7 @@ def keyPressed():
         if board[plRow][plCol] == "P":
           goSuper()
         board[plRow][plCol] = "pl"
-      if (game["isSuper"]) and ( board[plRow][plCol] not in ["p", "P", " ", "b", "pl", "w"] ):
+      if (game["isSuper"]) and ( board[plRow][plCol +1] not in ["p", "P", " ", "b", "pl", "w"] ):
         # print ("here")
         ghosts[board[plRow][plCol + 1]].cur = img5
         ghosts[board[plRow][plCol + 1]].mode = "c"
